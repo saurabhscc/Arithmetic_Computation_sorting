@@ -20,3 +20,18 @@ for (( i=0 ; i<${#computation[@]} ; i++ ))
 do
 	result[$i]=${computation[$i]};
 done
+
+for (( i=0 ; i<${#result[@]} ; i++ ))
+do
+	for (( j=$(($i+1)) ; j<${#result[@]} ; j++ ))
+	do
+		if [ ${result[i]} -lt ${result[j]} ]
+		then
+			temp=${result[j]};
+			result[j]=${result[i]};
+			result[i]=$temp;
+		fi
+	done
+done
+
+echo "Result in Descending Order: " ${result[@]};
