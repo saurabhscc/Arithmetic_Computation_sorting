@@ -7,3 +7,4 @@ read -p "Enter third number: " num3
 sol1=$(($num1+$num2*$num3));
 sol2=$(($num1*$num2+$num3));
 sol3=$(($num3+$num1/$num2));
+sol4=$(($num1%$num2+$num3));
