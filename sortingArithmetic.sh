@@ -35,3 +35,16 @@ do
 done
 
 echo "Result in Descending Order: " ${result[@]};
+
+for (( i=0 ; i<${#result[@]} ; i++ ))
+do
+   for (( j=$(($i+1)) ; j<${#result[@]} ; j++ ))
+   do
+      if [ ${result[i]} -gt ${result[j]} ]
+      then
+         temp=${result[j]};
+         result[j]=${result[i]};
+         result[i]=$temp;
+      fi
+   done
+done
