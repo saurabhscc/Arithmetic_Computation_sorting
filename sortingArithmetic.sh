@@ -14,3 +14,9 @@ computation[0]=$sol1;
 computation[1]=$sol2;
 computation[2]=$sol3;
 computation[3]=$sol4;
+
+result=();
+for (( i=0 ; i<${#computation[@]} ; i++ ))
+do
+	result[$i]=${computation[$i]};
+done
